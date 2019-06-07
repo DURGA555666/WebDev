@@ -27,6 +27,16 @@ export class DishService {
       price: 'Rs:100',
       featured: true,
       description: 'Spicy creamy tasty Telangana Tiffine'
+    },
+    {
+      id: '3',
+      name: 'Pizza',
+      categeory: 'VEG',
+      image: '/assets/images/uthappizza.png',
+      label: 'Special',
+      price: 'Rs:180',
+      featured: true,
+      description: 'Panner with roasted chicken pizza with extra Cheese'
     }
   ];
   getDish(): Dish[]{

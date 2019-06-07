@@ -1,26 +1,29 @@
 <div class="container"
-    fxLayout="column"
+    fxLayout="row"
     fxLayoutGap="20px">
 
 
-    <div fxFlex>
+        <div fxFlex>
 
-      <mat-card class="example-card" *ngFor='let dish of dishes' (click)="addtoCart(dish)">
-        <mat-card-header>
+            <mat-card class="example-card" *ngFor='let dish of dishes' (click)="addtoCart(dish)">
+              <mat-card-header>
 
-          <mat-card-title>{{dish.name}}</mat-card-title>
-          <mat-card-subtitle>Price:{{dish.price}}</mat-card-subtitle>
+                <mat-card-title>{{dish.name}}</mat-card-title>
+                <mat-card-subtitle>Price:{{dish.price}}</mat-card-subtitle>
 
-        </mat-card-header>
-        <img mat-card-image height="200px" src={{dish.image}} alt={{dish.name}}>
-        <mat-card-content>
-          <p>
-            {{dish.description}}
-          </p>
-        </mat-card-content>
-       </mat-card>
-    </div>
+              </mat-card-header>
+              <img mat-card-image height="200px" src={{dish.image}} alt={{dish.name}}>
+              <mat-card-content>
+                <p>
+                  {{dish.description}}
+                </p>
+              </mat-card-content>
+             </mat-card>
+          </div>
+
+
     <div fxFlex *ngIf="selectedDish">
+
       <mat-card>
         <div>
           <img matListAvatar src={{selectedDish.image}} alt={{selectedDish.name}}>
