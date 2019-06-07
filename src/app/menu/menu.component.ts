@@ -1,3 +1,4 @@
+import { DishService } from './../services/dish.service';
 import { Dish } from './../shared/dish';
 import { Component, OnInit } from '@angular/core';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
@@ -10,29 +11,10 @@ import {take} from 'rxjs/operators';
 })
 export class MenuComponent implements OnInit {
 
-  dishes: Dish[]=[
-    {
-      id: '1',
-      name: 'Dosa',
-      categeory: 'VEG',
-      image: '../assets/images/Dosa.jpg',
-      label: 'Special',
-      price: 'Rs:50',
-      featured: true,
-      description: 'Spicy creamy tasty tiffine'
-    },
-    {
-      id: '2',
-      name: 'Vada',
-      categeory: 'VEG',
-      image: '/assets/images/vadonut.png',
-      label: 'Special',
-      price: 'Rs:100',
-      featured: true,
-      description: 'Spicy creamy tasty Telangana Tiffine'
-    }
-  ];
+  dishes: Dish[];
   selectedDish: Dish;
+  private dishservice = new DishService();
+
   constructor(private _ngZone: NgZone) {}
 
   @ViewChild('autosize', {static: false}) autosize: CdkTextareaAutosize;
@@ -42,7 +24,9 @@ export class MenuComponent implements OnInit {
     this._ngZone.onStable.pipe(take(1))
         .subscribe(() => this.autosize.resizeToFitContent(true));
   }
+
   ngOnInit() {
+    this.dishes=this.dishservice.getDish();
   }
   addtoCart(index){
     this.selectedDish=index;
