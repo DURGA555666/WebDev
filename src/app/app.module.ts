@@ -2,21 +2,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule } from '@angular/flex-layout';
-import { MatToolbarModule,MatListModule,MatInputModule,MatCardModule,MatButtonModule} from '@angular/material';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import 'hammerjs';
-import { MenuComponent } from './menu/menu.component';
-import { DishService } from './services/dish.service';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { AgmCoreModule } from '@agm/core';
+import { MatToolbarModule,MatListModule,MatInputModule,MatCardModule,MatButtonModule} from '@angular/material';
+import 'hammerjs';
+// components
+import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { LocationComponent } from './location/location.component';
+// services
+import { DishService } from './services/dish.service';
+
+// modules
+import { AppRoutesModule } from './app-routes/app-routes.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LocationComponent,
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,10 +38,17 @@ import { FooterComponent } from './footer/footer.component';
     MatInputModule,
     MatCardModule,
     MatListModule,
-    AppRoutingModule,
+
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyBIirBdpTf3XHpWl4mfNux-NbQ7wORVLGw'
+    }),
+    AppRoutesModule,
+
+   // HomeComponent,
+
 
   ],
   providers: [ DishService],
