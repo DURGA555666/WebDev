@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule } from '@angular/flex-layout';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AgmCoreModule } from '@agm/core';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { MatToolbarModule,MatListModule,MatInputModule,MatCardModule,MatButtonModule} from '@angular/material';
 import 'hammerjs';
 // components
@@ -19,6 +21,7 @@ import { DishService } from './services/dish.service';
 
 // modules
 import { AppRoutesModule } from './app-routes/app-routes.module';
+import { ContactComponent } from './login/contact.component';
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { AppRoutesModule } from './app-routes/app-routes.module';
     FooterComponent,
     LocationComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { AppRoutesModule } from './app-routes/app-routes.module';
     MatInputModule,
     MatCardModule,
     MatListModule,
-
+    MatDialogModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,

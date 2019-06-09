@@ -9,10 +9,10 @@
       <div fxFlex="40" fxFlexOffset="20px">
         <h4>Links</h4>
         <mat-list>
-          <mat-list-item><a mat-raised-button color="primary">Home</a></mat-list-item>
-          <mat-list-item><a mat-raised-button color="primary">About</a></mat-list-item>
-          <mat-list-item><a mat-raised-button color="primary">Menu</a></mat-list-item>
-          <mat-list-item><a mat-raised-button color="primary">Contact</a></mat-list-item>
+          <mat-list-item [routerLink]="['/home']" routerLinkActive="router-link-active" ><a mat-raised-button color="primary">Home</a></mat-list-item>
+          <mat-list-item [routerLink]="['/about']" routerLinkActive="router-link-active" ><a mat-raised-button color="primary">About</a></mat-list-item>
+          <mat-list-item [routerLink]="['/menu']" routerLinkActive="router-link-active" ><a mat-raised-button color="primary">Menu</a></mat-list-item>
+          <mat-list-item [routerLink]="['/contact']" routerLinkActive="router-link-active" ><a mat-raised-button color="primary">Contact</a></mat-list-item>
         </mat-list>
       </div>
       <div fxFlex="55">
@@ -38,6 +38,6 @@
     </div>
   </div>
   <div>
-      <p>© Copyright 2019 pIggY</p>
+      <p>© Copyright 2019 BCube</p>
   </div>
 </div>

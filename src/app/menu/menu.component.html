@@ -2,7 +2,7 @@
     fxLayout="row"
     fxLayoutGap="20px">
 
-            <mat-card class="example-card" *ngFor='let dish of dishes' (click)="addtoCart(dish)" fxFlex>
+            <mat-card mat-raised-button class="example-card" *ngFor='let dish of dishes' (click)="addtoCart(dish)" fxFlex>
               <mat-card-header>
 
                 <mat-card-title>{{dish.name}}</mat-card-title>
@@ -18,11 +18,17 @@
              </mat-card>
 
 
-    <div  *ngIf="selectedDish">
 
-      <mat-card>
+
+      <mat-card *ngIf="selectedDish">
+          <mat-card-header>
+
+              <mat-card-title>{{selectedDish.name}}</mat-card-title>
+              <mat-card-subtitle>Price:{{selectedDish.price}}</mat-card-subtitle>
+
+            </mat-card-header>
         <div>
-          <img matListAvatar src={{selectedDish.image}} alt={{selectedDish.name}}>
+          <img matListAvatar src={{selectedDish.image}} alt={{selectedDish.name}} height=auto>
         </div>
         <mat-form-field  [style.fontSize]="">
           <mat-label>{{selectedDish.name}} Quantity</mat-label>
@@ -45,4 +51,4 @@
       </mat-card>
     </div>
 
-</div>
+

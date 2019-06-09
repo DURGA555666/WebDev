@@ -32,6 +32,7 @@ export class MenuComponent implements OnInit {
   }
   addtoCart(index){
     this.selectedDish=index;
+
   }
 
 }
