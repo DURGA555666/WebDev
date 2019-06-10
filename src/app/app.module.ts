@@ -6,7 +6,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { AgmCoreModule } from '@agm/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatToolbarModule,MatListModule,MatInputModule,MatCardModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatToolbarModule,MatListModule,MatInputModule,MatCardModule,MatButtonModule, MatCheckboxModule, MatSelectModule, MatSlideToggleModule} from '@angular/material';
 import 'hammerjs';
 // components
 import { AppComponent } from './app.component';
@@ -22,7 +23,7 @@ import { DishService } from './services/dish.service';
 // modules
 import { AppRoutesModule } from './app-routes/app-routes.module';
 import { ContactComponent } from './login/contact.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -44,8 +45,12 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatListModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     MatFormFieldModule,
     FormsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
     MatCheckboxModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

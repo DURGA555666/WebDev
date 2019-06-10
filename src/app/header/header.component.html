@@ -1,11 +1,13 @@
 <mat-toolbar color="primary" style="position: fixed">
     <span><img src="/assets/images/Logo.jpg" height=30 width=41></span>
-    <a mat-button [routerLink]="['/home']" routerLinkActive="router-link-active" ><span class="fa fa-home fa-lg"></span> Home</a>
-    <a mat-button [routerLink]="['/about']" routerLinkActive="router-link-active" ><span class="fa fa-info fa-lg"></span> About</a>
-    <a mat-button [routerLink]="['/menu']" routerLinkActive="router-link-active" ><span class="fa fa-list fa-lg"></span> Menu</a>
-    <a mat-button [routerLink]="['/location']" routerLinkActive="router-link-active" ><span class="fa fa-address-card fa-lg"></span> Location</a>
+    <a mat-button [routerLink]="['/home']" routerLinkActive="router-link-active" ><span class="fa fa-home fa-lg" ></span> Home</a>
+    <a mat-button [routerLink]="['/about']" routerLinkActive="router-link-active" ><span class="fa fa-info fa-lg" ></span> About</a>
+    <a mat-button [routerLink]="['/menu']" routerLinkActive="router-link-active" *ngIf="showButton"><span class="fa fa-list fa-lg"></span> Menu</a>
+    <a mat-button [routerLink]="['/location']" routerLinkActive="router-link-active" *ngIf="showButton"><span class="fa fa-map-marker"></span> Location</a>
     <span class="flex-spacer"></span>
-    <a mat-button (click)="getLoginform()"><span class="fa fa-sign-in fa-lg"></span> Login</a>
+    <a mat-button *ngIf="!showButton" (click)="getLoginform()" ><span class="fa fa-sign-in fa-lg" ></span> Login</a>
+    <a mat-button *ngIf="showButton" (click)="getSignout()" ><span class="fa fa-sign-out fa-lg" ></span> Log Out</a>
+
   </mat-toolbar>
 
   <div class="container jumbotron"

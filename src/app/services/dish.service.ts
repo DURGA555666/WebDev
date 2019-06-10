@@ -1,11 +1,13 @@
 import { Dish } from './../shared/dish';
 import { Injectable } from '@angular/core';
-
+import {  Observable,of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class DishService {
 
+  login: boolean;
   constructor() { }
   iteam : Dish[]=[
     {
@@ -39,7 +41,17 @@ export class DishService {
       description: 'Panner with roasted chicken pizza with extra Cheese'
     }
   ];
-  getDish(): Dish[]{
-    return this.iteam;
+
+  getDish(): Observable<Dish[]> {
+    return of(this.iteam).pipe(delay(2000))
+  }
+  getLog(): Observable<boolean>{
+    return of(this.login).pipe(delay(2000))
+  }
+  loggedIn(){
+    this.login=true;
+  }
+  loggedout(){
+    this.login=false;
   }
 }

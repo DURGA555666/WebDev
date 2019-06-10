@@ -1,23 +1,28 @@
 <div class="container"
     fxLayout="row"
     fxLayoutGap="20px">
+  <div *ngIf="dishes">
 
-            <mat-card mat-raised-button class="example-card" *ngFor='let dish of dishes' (click)="addtoCart(dish)" fxFlex>
-              <mat-card-header>
+      <mat-card mat-raised-button class="example-card" *ngFor='let dish of dishes' (click)="addtoCart(dish)" fxFlex>
+          <mat-card-header>
 
-                <mat-card-title>{{dish.name}}</mat-card-title>
-                <mat-card-subtitle>Price:{{dish.price}}</mat-card-subtitle>
+            <mat-card-title>{{dish.name}}</mat-card-title>
+            <mat-card-subtitle>Price:{{dish.price}}</mat-card-subtitle>
 
-              </mat-card-header>
-              <img mat-card-image height="200px" src={{dish.image}} alt={{dish.name}}>
-              <mat-card-content>
-                <p>
-                  {{dish.description}}
-                </p>
-              </mat-card-content>
-             </mat-card>
+          </mat-card-header>
+          <img mat-card-image height="200px" src={{dish.image}} alt={{dish.name}}>
+          <mat-card-content>
+            <p>
+              {{dish.description}}
+            </p>
+          </mat-card-content>
+         </mat-card>
 
+  </div>
 
+  <div [hidden]="dishes">
+      <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
 
 
       <mat-card *ngIf="selectedDish">
