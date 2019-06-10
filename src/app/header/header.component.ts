@@ -1,3 +1,5 @@
+import { ContactComponent } from './../login/contact.component';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
-  getLoginform(){}
+  getLoginform(){
+    this.dialog.open(ContactComponent,{ width:'500px', height:'500px'});
+  }
 }

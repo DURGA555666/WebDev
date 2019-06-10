@@ -5,8 +5,8 @@ import {FlexLayoutModule } from '@angular/flex-layout';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AgmCoreModule } from '@agm/core';
 import { MatDialogModule } from '@angular/material/dialog';
-
-import { MatToolbarModule,MatListModule,MatInputModule,MatCardModule,MatButtonModule} from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatToolbarModule,MatListModule,MatInputModule,MatCardModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
 import 'hammerjs';
 // components
 import { AppComponent } from './app.component';
@@ -22,6 +22,7 @@ import { DishService } from './services/dish.service';
 // modules
 import { AppRoutesModule } from './app-routes/app-routes.module';
 import { ContactComponent } from './login/contact.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -43,6 +44,9 @@ import { ContactComponent } from './login/contact.component';
     MatCardModule,
     MatListModule,
     MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatCheckboxModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
@@ -54,6 +58,9 @@ import { ContactComponent } from './login/contact.component';
    // HomeComponent,
 
 
+  ],
+  entryComponents:[
+    ContactComponent
   ],
   providers: [ DishService],
   bootstrap: [AppComponent]
